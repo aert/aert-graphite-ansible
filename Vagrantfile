@@ -23,6 +23,8 @@ Vagrant.configure("2") do |config|
   # Customize the box
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--memory", 512, "--name", "graphite"]
+    v.customize ["modifyvm", :id, "--ioapic", "on"]
+    v.customize ["modifyvm", :id, "--cpus", "2"]
   end
 
 end
