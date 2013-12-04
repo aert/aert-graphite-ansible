@@ -1,0 +1,7 @@
+[program:graphite]
+command={{ app_home }}/start_graphite.sh
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=True
+stdout_logfile = {{ app_log }}/supervisor.log 

@@ -1,0 +1,12 @@
+---
+
+# external
+app_servername : "{{ app_servername }}"
+
+# app
+prefix      : /opt/graphite
+app_conf    : "{{ prefix }}/conf"
+app_log     : "{{ prefix }}/log"
+
+# db
+dbpath      : "{{prefix}}/storage/graphite.db"

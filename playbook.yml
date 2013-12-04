@@ -1,0 +1,13 @@
+---
+# This is the top-level playbook that defines our entire infrastructure.
+
+- hosts: all
+  gather_facts: False
+  sudo: True
+  vars:
+    app_servername: "192.168.111.226"
+  roles:
+    - common
+    - nginx
+    - graphite
+

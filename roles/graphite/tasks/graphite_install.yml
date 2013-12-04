@@ -1,0 +1,20 @@
+---
+
+# Dependencies
+- name: graphite-deps_apt
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python-pip
+    - python-dev
+    - supervisor
+
+
+- name: graphite-install-whisper
+  pip: name=whisper version=0.9.12
+
+- name: graphite-install-carbon
+  pip: name=carbon version=0.9.12
+
+- name: graphite-install-web
+  pip: name=graphite-web version=0.9.12
+
