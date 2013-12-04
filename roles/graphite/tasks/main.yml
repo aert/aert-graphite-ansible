@@ -1,5 +1,6 @@
 ---
  
 - include: graphite_install.yml
+- include: graphite_conf.yml
 #- include: supervisor.yml
 #- include: nginx.yml

@@ -1,0 +1,8 @@
+---
+
+- name: carbon.conf
+  template: src=carbon.conf dest={{app_conf}}/carbon.conf owner=www-data group=www-data
+
+- name: storage-schemas.conf
+  template: src=storage-schemas.conf dest={{app_conf}}/storage-schemas.conf owner=www-data group=www-data
+
