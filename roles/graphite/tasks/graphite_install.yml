@@ -1,7 +1,7 @@
 ---
 
 # Dependencies
-- name: graphite-deps_apt
+- name: graphite.apt
   apt: pkg={{ item }} state=installed
   with_items:
     - python-pip
@@ -9,12 +9,24 @@
     - supervisor
 
 
-- name: graphite-install-whisper
+- name: graphite.whisper
   pip: name=whisper version=0.9.12
 
-- name: graphite-install-carbon
+- name: graphite.carbon.daemonize
+  pip: name=daemonize version=2.2.1
+
+- name: graphite.carbon.twisted
+  pip: name=Twisted version=11.1.0
+
+- name: graphite.carbon
   pip: name=carbon version=0.9.12
 
-- name: graphite-install-web
+- name: graphite.web.django
+  pip: name=django version=1.6
+
+- name: graphite.web.django-tagging
+  pip: name=django-tagging version=0.3.1
+
+- name: graphite.web
   pip: name=graphite-web version=0.9.12
 

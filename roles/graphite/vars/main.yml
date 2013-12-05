@@ -8,5 +8,7 @@ prefix      : /opt/graphite
 app_conf    : "{{ prefix }}/conf"
 app_log     : "{{ prefix }}/log"
 
-# db
-dbpath      : "{{prefix}}/storage/graphite.db"
+# admin user
+admin_user  : admin
+admin_email : dev.aert@gmail.com
+admin_pwd   : admin

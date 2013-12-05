@@ -9,12 +9,12 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2013-12-02T14:18:33.999Z", 
+    "last_login": "2013-12-05T16:02:32.318", 
     "groups": [], 
     "user_permissions": [], 
-    "password": "pbkdf2_sha256$10000$eYJHyUgTwBOv$YtcVkaTBAn512po7vmOjO267I2FxlNKQ/dV99WfWF0A=", 
+    "password": "pbkdf2_sha256$12000$29jAQ0hpNIaT$nvAQw1RCWSho+8uLB3zfOJSWRxHGQNVsdWkH4KvbzsA=", 
     "email": "dev.aert@gmail.com", 
-    "date_joined": "2013-12-02T14:18:33.999Z"
+    "date_joined": "2013-12-05T16:02:32.318"
   }
 }
 ]

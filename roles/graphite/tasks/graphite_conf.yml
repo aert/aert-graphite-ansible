@@ -6,3 +6,26 @@
 - name: storage-schemas.conf
   template: src=storage-schemas.conf dest={{app_conf}}/storage-schemas.conf owner=www-data group=www-data
 
+- name: web.settings
+  template: src=local_settings.py dest={{prefix}}/webapp/graphite/local_settings.py owner=www-data group=www-data
+
+- name: web.fixtures.upload
+  template: src={{item}} dest={{prefix}} owner=www-data group=www-data
+  with_items:
+    - "initial_data_admin.json"
+
+- name: web.syncdb
+  shell: python manage.py syncdb --noinput chdir={{prefix}}/webapp/graphite
+
+- name: web.loaddata
+  shell: python manage.py loaddata {{prefix}}/initial_data_admin.json chdir={{prefix}}/webapp/graphite
+
+- name: web.fixtures.remove
+  file: path={{prefix}}/initial_data_admin.json state=absent
+
+- name: graphite.perms
+  shell: chown -R www-data:www-data {{prefix}}
+
+- name: carbon.start
+  shell: cd {{prefix}} && ./bin/carbon-cache.py stop && ./bin/carbon-cache.py start
+
