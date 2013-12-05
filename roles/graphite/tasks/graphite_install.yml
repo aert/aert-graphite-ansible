@@ -7,7 +7,14 @@
     - python-pip
     - python-dev
     - supervisor
+    - memcached
+    - sqlite3
+    - libcairo2
+    - libcairo2-dev
+    - python-cairo 
 
+- name: supervisor.stop
+  shell: service supervisor stop
 
 - name: graphite.whisper
   pip: name=whisper version=0.9.12
@@ -21,8 +28,14 @@
 - name: graphite.carbon
   pip: name=carbon version=0.9.12
 
+- name: graphite.web.gunicorn
+  pip: name=gunicorn
+
+- name: graphite.web.memcached
+  pip: name=python-memcached version=1.53
+
 - name: graphite.web.django
-  pip: name=django version=1.6
+  pip: name=django version=1.5
 
 - name: graphite.web.django-tagging
   pip: name=django-tagging version=0.3.1

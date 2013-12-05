@@ -1,9 +1,9 @@
 ---
 
-- name: nginx_app_available
+- name: nginx.available
   template: src=graphite.site dest=/etc/nginx/sites-available/graphite.app owner=www-data group=www-data
 
-- name: nginx_app_enable
+- name: nginx.enable
   file: src=/etc/nginx/sites-available/graphite.app dest=/etc/nginx/sites-enabled/graphite.app state=link owner=www-data group=www-data
   notify:
     - restart nginx

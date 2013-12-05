@@ -23,9 +23,12 @@
 - name: web.fixtures.remove
   file: path={{prefix}}/initial_data_admin.json state=absent
 
+- name: web.gunicorn
+  template: src=start_graphite.sh dest={{prefix}}/webapp/start_graphite.sh mode=0751 owner=www-data group=www-data
+
 - name: graphite.perms
   shell: chown -R www-data:www-data {{prefix}}
 
 - name: carbon.start
-  shell: cd {{prefix}} && ./bin/carbon-cache.py stop && ./bin/carbon-cache.py start
+  shell: cd {{prefix}} && ./bin/carbon-cache.py stop && sleep 5 && ./bin/carbon-cache.py start
 
