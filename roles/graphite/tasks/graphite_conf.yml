@@ -6,8 +6,11 @@
 - name: storage-schemas.conf
   template: src=storage-schemas.conf dest={{app_conf}}/storage-schemas.conf owner=www-data group=www-data
 
-- name: web.settings
+- name: web.conf.settings
   template: src=local_settings.py dest={{prefix}}/webapp/graphite/local_settings.py owner=www-data group=www-data
+
+- name: web.conf.dashboard
+  template: src=dashboard.conf dest={{prefix}}/conf/dashboard.conf owner=www-data group=www-data
 
 - name: web.fixtures.upload
   template: src={{item}} dest={{prefix}} owner=www-data group=www-data

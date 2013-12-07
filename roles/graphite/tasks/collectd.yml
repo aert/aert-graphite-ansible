@@ -1,0 +1,13 @@
+---
+
+# Dependencies
+- name: collectd.apt
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - collectd
+
+- name: collectd.conf
+  template: src=collectd.conf dest=/etc/collectd/collectd.conf owner=root group=root
+  notify:
+    - restart collectd
+

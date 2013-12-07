@@ -5,3 +5,6 @@
 
 - name: restart supervisor
   shell: supervisorctl reread && supervisorctl update && supervisorctl restart graphite
+
+- name: restart collectd
+  service: name=collectd state=restarted

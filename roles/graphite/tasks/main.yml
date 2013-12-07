@@ -4,3 +4,4 @@
 - include: graphite_conf.yml
 - include: supervisor.yml
 - include: nginx.yml
+- include: collectd.yml
